@@ -13,8 +13,7 @@ This is the part of [Self Driving Car Engineer Nanodegree](https://www.udacity.c
 The role of P coefficient it to help car to drive around CTE. It is intended to reduce CTE in proportions. Lager values for this coefficient leads to faster compensating.
 In experimental way I find out that 0.221 is quite enough to keep car on the track.
 If only this coefficient is used, car will drive from left side to right side of the road not safely. Please, take a look at video.
- 
-* [P only](https://youtu.be/D-fNVaJFozE)
+ [P only](https://youtu.be/D-fNVaJFozE)
 
 - <b>Integral coefficient (I)</b><br/>
 This coefficient intended to compensate systematic bias. For example if car wheels have error and constantly turn on specific angle, this coefficient helps to minimize CTE over time.
