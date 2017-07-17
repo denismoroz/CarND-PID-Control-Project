@@ -1,6 +1,33 @@
 # CarND-Controls-PID
 Self-Driving Car Engineer Nanodegree Program
 
+### Goal
+
+Build a PID Controller to control a Udacity car simulator. PID Controller implemented in this project responsible for calculating steering angle.
+This is the part of [Self Driving Car Engineer Nanodegree](https://www.udacity.com/course/self-driving-car-engineer-nanodegree--nd013).
+
+
+### PID - P, I ,D ?
+
+- <b>Proportional coefficient (P)</b>
+The role of P coefficient it to help car to drive around CTE. It is intended to reduce CTE in proportions. Lager values for this coefficient leads to faster compensating.
+In experimental way I find out that 0.221 is quite enough to keep car on the track.
+If only this coefficient is used, car will drive from left side to right side of the road not safely. Please, take a look at video.
+ 
+* [P only](https://youtu.be/D-fNVaJFozE)
+
+- <b>Integral coefficient (I)</b><br/>
+This coefficient intended to compensate systematic bias. For example if car wheels have error and constantly turn on specific angle, this coefficient helps to minimize CTE over time.
+There is no systematic bias coded in simulator, so this coefficient is set to 0.
+
+- <b>Differential coefficient (D)</b>
+To make car stable and avoid constantly left-right driving, this coefficient is used. It aims at flattening the error trajectory into a horizontal line.
+It is calculated as difference between current and previous CTE. 
+At a first attempt I set this to small value like 0.3, but on hard turns car was not able to return back the middle of the road, so I increased it and stopped around 3.2.
+
+Here is a video with a final result [P and D](https://youtu.be/Q75zgtislFE).
+
+
 ---
 
 ## Dependencies
